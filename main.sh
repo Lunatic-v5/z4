@@ -172,7 +172,7 @@ function dir_xray() {
 
 ### Tambah domain
 function add_domain() {
-    LOGO
+    KONTOLODON
     echo -e "${red}    ♦️${NC} ${green} CUSTOM SETUP DOMAIN VPS     ${NC}"
     echo -e "${red}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
     echo "1. Use Domain From Script / Gunakan Domain Dari Script"

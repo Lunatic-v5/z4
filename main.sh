@@ -7,7 +7,6 @@ MYIP=$(curl -sS ipv4.icanhazip.com)
     else
         res="Permission Denied!"
     fi
-    KYTPROJECT
 }
 KYTPROJECT() {
     curl -sS https://raw.githubusercontent.com/Lunatic-v5/IZIN/Lunatic/ip >/root/tmp
@@ -36,7 +35,6 @@ TIMEDATE() {
     fi
 }
 apete_eee() {
-    KytTunneling
     if [ -f /home/needupdate ]; then
         red "Your script need to update first !"
         exit 0
@@ -53,7 +51,7 @@ apete_eee() {
 }
 apete_eee
 clear
-LOGO
+# LOGO
 echo -e "${RED}JANGAN INSTALL SCRIPT INI MENGGUNAKAN KONEKSI VPN!!!${FONT}"
 echo -e ""
 echo -e "${Green}DNS POINTING${FONT}(DNS-resolved IP address of the domain)"
@@ -326,9 +324,9 @@ function download_config(){
     wget -q -O /etc/banner "${REPO}config/banner" >/dev/null 2>&1
     
     # > Add menu, thanks to Bhoikfost Yahya <3
-    wget -O /tmp/menu-master.zip "${REPO}config/menu.zip" >/dev/null 2>&1
+    wget -O /tmp/menu.zip "${REPO}config/menu.zip" >/dev/null 2>&1
     mkdir /tmp/menu
-    7z e  /tmp/menu-master.zip -o/tmp/menu/ >/dev/null 2>&1
+    7z e  /tmp/menu.zip -o/tmp/menu/ >/dev/null 2>&1
     chmod +x /tmp/menu/*
     mv /tmp/menu/* /usr/sbin/
 

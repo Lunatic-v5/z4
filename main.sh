@@ -1,14 +1,5 @@
 #!/bin/bash
-KytTunneling() {
-MYIP=$(curl -sS ipv4.icanhazip.com)
-    IZIN=$(curl -sS https://raw.githubusercontent.com/Lunatic-v5/IZIN/Lunatic/ip | awk '{print $4}' | grep $MYIP)
-    if [ "$MYIP" = "$IZIN" ]; then
-        TIMEDATE
-    else
-        res="Permission Denied!"
-    fi
-}
-KYTPROJECT() {
+KONTOLODON() {
     curl -sS https://raw.githubusercontent.com/Lunatic-v5/IZIN/Lunatic/ip >/root/tmp
     data=($(cat /root/tmp | grep -E "^### " | awk '{print $2}'))
     for user in "${data[@]}"; do
@@ -24,32 +15,45 @@ KYTPROJECT() {
     done
     rm -f /root/tmp
 }
-TIMEDATE() {
-    if [ -f "/etc/.$NAMECOM.ini" ]; then
-        CekTwo=$(cat /etc/.$NAMECOM.ini)
-        if [ "$CekOne" = "$CekTwo" ]; then
-            res="Expired"
-        fi
-    else
-        res="Permission Accepted..."
+
+MYIP=$(curl -sS ipv4.icanhazip.com)
+Name=$(curl -sS https://raw.githubusercontent.com/Lib3v/otw/main/ip | grep $MYIP | awk '{print $2}')
+echo $Name > /usr/local/etc/.$Name.ini
+CekOne=$(cat /usr/local/etc/.$Name.ini)
+
+Bloman () {
+if [ -f "/etc/.$Name.ini" ]; then
+CekTwo=$(cat /etc/.$Name.ini)
+    if [ "$CekOne" = "$CekTwo" ]; then
+        res="Expired"
     fi
+else
+res="Permission Accepted..."
+fi
 }
-apete_eee() {
-    if [ -f /home/needupdate ]; then
-        red "Your script need to update first !"
-        exit 0
-    elif [ "$res" = "Permission Accepted..." ]; then
-        echo -ne
+
+PERMISSION () {
+    MYIP=$(curl -sS ipv4.icanhazip.com)
+    IZIN=$(curl -sS https://raw.githubusercontent.com/Lunatic-v5/z4/Lunatic/ip | awk '{print $4}' | grep $MYIP)
+    if [ "$MYIP" = "$IZIN" ]; then
+    Bloman
     else
-        clear
-        echo ""
-        red "Permission Denied! Please Buy Licence"
-        green "Contact telegram https://t.me/kytxz"
-        sleep 2
-        exit 0
+    res="Permission Denied!"
     fi
+    KONTOLODON
 }
-apete_eee
+red='\e[1;31m'
+green='\e[1;32m'
+NC='\e[0m'
+green() { echo -e "\\033[32;1m${*}\\033[0m"; }
+red() { echo -e "\\033[31;1m${*}\\033[0m"; }
+PERMISSION
+
+if [ "$res" = "Expired" ]; then
+Exp="\e[36mExpired\033[0m"
+else
+Exp=$(curl -sS https://raw.githubusercontent.com/Lunatic-v5/z4/Lunatic/ip | grep $MYIP | awk '{print $3}')
+fi
 clear
 # LOGO
 echo -e "${RED}JANGAN INSTALL SCRIPT INI MENGGUNAKAN KONEKSI VPN!!!${FONT}"
@@ -57,7 +61,7 @@ echo -e ""
 echo -e "${Green}DNS POINTING${FONT}(DNS-resolved IP address of the domain)"
 echo -e "${Green}Menuju Proses Penginstalan Dalam 8 Detik Lagi !!!"
 echo ""
-sleep 8
+sleep 3
 ### System Information
 TANGGAL=$(date '+%Y-%m-%d')
 TIMES="10"

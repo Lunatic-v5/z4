@@ -22,9 +22,9 @@ sleep 3
 echo -e " [INFO] Downloading Update File" | lolcat
 sleep 2
 rm -rf /tmp/menu
-wget -O /tmp/menu-master.zip "${REPO}config/menu.zip" >/dev/null 2>&1
+wget -O /tmp/menu.zip "${REPO}config/menu.zip" >/dev/null 2>&1
     mkdir /tmp/menu
-    7z e  /tmp/menu-master.zip -o/tmp/menu/ >/dev/null 2>&1
+    7z e  /tmp/menu.zip -o/tmp/menu/ >/dev/null 2>&1
     chmod +x /tmp/menu/*
     mv /tmp/menu/* /usr/sbin/
 echo -e " [INFO] Update Successfully" | lolcat

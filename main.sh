@@ -1,6 +1,45 @@
 #!/bin/bash
-KONTOLODON() {
-    curl -sS https://raw.githubusercontent.com/Lunatic-v5/IZIN/Lunatic/ip >/root/tmp
+#!/bin/bash
+### Color
+Green="\e[92;1m"
+RED="\033[31m"
+YELLOW="\033[33m"
+BLUE="\033[36m"
+FONT="\033[0m"
+GREENBG="\033[42;37m"
+REDBG="\033[41;37m"
+OK="${Green}--->${FONT}"
+ERROR="${RED}[ERROR]${FONT}"
+GRAY="\e[1;30m"
+NC='\e[0m'
+red='\e[1;31m'
+green='\e[0;32m'
+function apete_eee() {
+    echo -e "
+    ┌───────────────────────────────────────────────┐
+ ───│                                               │───
+ ───│    $Green┌─┐┬ ┬┌┬┐┌─┐┌─┐┌─┐┬─┐┬┌─┐┌┬┐  ┬  ┬┌┬┐┌─┐$NC   │───
+ ───│    $Green├─┤│ │ │ │ │└─┐│  ├┬┘│├─┘ │   │  │ │ ├┤ $NC   │───
+ ───│    $Green┴ ┴└─┘ ┴ └─┘└─┘└─┘┴└─┴┴   ┴   ┴─┘┴ ┴ └─┘$NC   │───
+    │    ${YELLOW}Copyright${FONT} (C)$GRAY https://github.com/Kytxz$NC     │
+    └───────────────────────────────────────────────┘
+         ${RED}Autoscript xray vpn lite (multi port)${FONT}    
+${RED}Make sure the internet is smooth when installing the script${FONT}
+        "
+
+}
+KytTunneling() {
+MYIP=$(curl -sS ipv4.icanhazip.com)
+    IZIN=$(curl -sS https://raw.githubusercontent.com/myridwan/izinvps/ipuk/ip | awk '{print $4}' | grep $MYIP)
+    if [ "$MYIP" = "$IZIN" ]; then
+        TIMEDATE
+    else
+        res="Permission Denied!"
+    fi
+    KYTPROJECT
+}
+KYTPROJECT() {
+    curl -sS https://raw.githubusercontent.com/myridwan/izinvps/ipuk/ip >/root/tmp
     data=($(cat /root/tmp | grep -E "^### " | awk '{print $2}'))
     for user in "${data[@]}"; do
         exp=($(grep -E "^### $user" "/root/tmp" | awk '{print $3}'))
@@ -15,40 +54,34 @@ KONTOLODON() {
     done
     rm -f /root/tmp
 }
-
-MYIP=$(curl -sS ipv4.icanhazip.com)
-Name=$(curl -sS https://raw.githubusercontent.com/Lib3v/otw/main/ip | grep $MYIP | awk '{print $2}')
-echo $Name > /usr/local/etc/.$Name.ini
-CekOne=$(cat /usr/local/etc/.$Name.ini)
-
-Bloman () {
-if [ -f "/etc/.$Name.ini" ]; then
-CekTwo=$(cat /etc/.$Name.ini)
-    if [ "$CekOne" = "$CekTwo" ]; then
-        res="Expired"
-    fi
-else
-res="Permission Accepted..."
-fi
-}
-
-PERMISSION () {
-    MYIP=$(curl -sS ipv4.icanhazip.com)
-    IZIN=$(curl -sS https://raw.githubusercontent.com/Lunatic-v5/z4/Lunatic/ip | awk '{print $4}' | grep $MYIP)
-    if [ "$MYIP" = "$IZIN" ]; then
-    Bloman
+TIMEDATE() {
+    if [ -f "/etc/.$NAMECOM.ini" ]; then
+        CekTwo=$(cat /etc/.$NAMECOM.ini)
+        if [ "$CekOne" = "$CekTwo" ]; then
+            res="Expired"
+        fi
     else
-    res="Permission Denied!"
+        res="Permission Accepted..."
     fi
-    KONTOLODON
 }
-PERMISSION
-if [ "$res" = "Expired" ]; then
-Exp="\e[36mExpired\033[0m"
-else
-Exp=$(curl -sS https://raw.githubusercontent.com/Lunatic-v5/z4/Lunatic/ip | grep $MYIP | awk '{print $3}')
-fi
+apete_eee() {
+    KytTunneling
+    if [ -f /home/needupdate ]; then
+        red "Your script need to update first !"
+        exit 0
+    elif [ "$res" = "Permission Accepted..." ]; then
+        echo -ne
+    else
+        clear
+        echo ""
+        red "Permission Denied! Please Buy Licence"
+        green "Contact telegram https://t.me/kytxz"
+        sleep 8
+        exit 0
+    fi
+}
 clear
+apete_eee
 # LOGO
 echo -e "${RED}JANGAN INSTALL SCRIPT INI MENGGUNAKAN KONEKSI VPN!!!${FONT}"
 echo -e ""
@@ -172,7 +205,7 @@ function dir_xray() {
 
 ### Tambah domain
 function add_domain() {
-    KONTOLODON
+    KYTPROJECT
     echo -e "${red}    ♦️${NC} ${green} CUSTOM SETUP DOMAIN VPS     ${NC}"
     echo -e "${red}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
     echo "1. Use Domain From Script / Gunakan Domain Dari Script"

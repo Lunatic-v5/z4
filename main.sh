@@ -1,5 +1,4 @@
 #!/bin/bash
-#!/bin/bash
 ### Color
 Green="\e[92;1m"
 RED="\033[31m"
@@ -73,10 +72,7 @@ apete_eee() {
         echo -ne
     else
         clear
-        echo ""
-        red "Permission Denied! Please Buy Licence"
-        green "Contact telegram https://t.me/kytxz"
-        sleep 8
+        echo "Permission Denied! Please Buy Licence"
         exit 0
     fi
 }

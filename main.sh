@@ -45,7 +45,7 @@ apete_eee() {
         echo ""
         red "Permission Denied! Please Buy Licence"
         green "Contact telegram https://t.me/kytxz"
-        sleep 8
+        sleep 2
         exit 0
     fi
 }

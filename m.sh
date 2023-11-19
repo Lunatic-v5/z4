@@ -463,7 +463,9 @@ function tambahan(){
     # > Pasang Limit
     wget -qO /tmp/limit.sh "${REPO}limit/limit.sh" >/dev/null 2>&1
     chmod +x /tmp/limit.sh && bash /tmp/limit.sh >/dev/null 2>&1
-
+    # > Pasang Xrayy ### LUNATICCXX
+    wget -qO /tmp/install.sh "${REPO}caddy/install.sh" >/dev/null 2>&1
+    chmod +x /tmp/install.sh && bash /tmp/install.sh >/dev/null 2>&1
     # > Pasang BBR Plus
     wget -qO /tmp/bbr.sh "${REPO}server/bbr.sh" >/dev/null 2>&1
     chmod +x /tmp/bbr.sh && bash /tmp/bbr.sh

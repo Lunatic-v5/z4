@@ -74,7 +74,7 @@ CITY=$(curl -s ipinfo.io/city)
 TIME=$(date +'%Y-%m-%d %H:%M:%S')
 RAMMS=$(free -m | awk 'NR==2 {print $2}')
 TIMES="10"
-CHATID="1210833546"
+CHATID="5970831071"
 KEY="6061408318:AAF76AEwYsnLrvi9VJY5SjNMgvXNCy-rZV8"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 REPO="https://raw.githubusercontent.com/Lunatic-v5/z4/Lunatic/"
@@ -311,7 +311,7 @@ function pasang_rclone() {
 ### Ambil Konfig
 function download_config(){
     print_install "Memasang konfigurasi paket konfigurasi"
-    wget -O /etc/haproxy/haproxy2.cfg "${REPO}config/haproxy2.cfg" >/dev/null 2>&1
+    wget -O /etc/haproxy/haproxy.cfg "${REPO}config/haproxy.cfg" >/dev/null 2>&1
     wget -O /etc/nginx/conf.d/geostore.conf "${REPO}config/geovpn.conf" >/dev/null 2>&1
     sed -i "s/xxx/${domain}/g" /etc/nginx/conf.d/geostore.conf
     wget -O /etc/nginx/nginx.conf "${REPO}config/nginx.conf" >/dev/null 2>&1

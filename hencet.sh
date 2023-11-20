@@ -25,9 +25,9 @@ echo -e "                    CONTACT TELEGRAM"$NC | lolcat
 echo -e "                       @Kytxz"$NC | lolcat
 echo -e "                       @rstorx"$NC | lolcat
 echo -e "$green.........................................................."$NC
-echo -e "$BGBLUE                       Tunggu 5 Detik!                    "$NC
+echo -e "$BGBLUE                       Tunggu 3 Detik!                    "$NC
 echo -e "$green.........................................................."$NC
-sleep 5
+sleep 3
 clear
 if [ "${EUID}" -ne 0 ]; then
                 echo "You need to run this script as root"

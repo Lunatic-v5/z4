@@ -22,8 +22,8 @@ echo -e "$BGBLUE                ⚡ PREMIUM SPEED SCRIPT ⚡                "$NC
 echo -e "$green.........................................................."$NC
 echo -e "               Autoscript Mod By ( LunaticProject )" | lolcat
 echo -e "                    CONTACT TELEGRAM"$NC | lolcat
-echo -e "                       @Kytxz"$NC | lolcat
-echo -e "                       @rstorx"$NC | lolcat
+echo -e "                       @Lunatic"$NC | lolcat
+echo -e "                       @LunaticX77"$NC | lolcat
 echo -e "$green.........................................................."$NC
 echo -e "$BGBLUE                       Tunggu 3 Detik!                    "$NC
 echo -e "$green.........................................................."$NC

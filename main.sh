@@ -1,4 +1,53 @@
 #!/bin/bash
+#!/bin/bash
+# Color Validation
+Lred='\e[1;91m'
+Lgreen='\e[92m'
+Lyellow='\e[93m'
+green='\e[32m'
+RED='\033[0;31m'
+NC='\033[0m'
+BGBLUE='\e[1;44m'
+ORANGE='\033[0;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+NC='\033[0;37m'
+# ===================
+echo ''
+clear
+echo ''
+echo -e "$green.........................................................."$NC
+echo -e "$BGBLUE                ⚡ PREMIUM SPEED SCRIPT ⚡                "$NC
+echo -e "$green.........................................................."$NC
+echo -e "               Autoscript Mod By ( LunaticProject )" | lolcat
+echo -e "                    CONTACT TELEGRAM"$NC | lolcat
+echo -e "                       @Kytxz"$NC | lolcat
+echo -e "                       @rstorx"$NC | lolcat
+echo -e "$green.........................................................."$NC
+echo -e "$BGBLUE                       Tunggu 5 Detik!                    "$NC
+echo -e "$green.........................................................."$NC
+sleep 5
+clear
+if [ "${EUID}" -ne 0 ]; then
+                echo "You need to run this script as root"
+                exit 1
+fi
+if [ "$(systemd-detect-virt)" == "openvz" ]; then
+                echo "OpenVZ is not supported"
+                exit 1
+fi
+red='\e[1;31m'
+green='\e[0;32m'
+NC='\e[0m'
+#IZIN SCRIPT
+MYIP=$(curl -sS ipv4.icanhazip.com)
+echo -e "\e[32mloading...\e[0m"
+clear
+# Valid Script
+clear
+echo -e "\e[32mloading...\e[0m"
+clear
 ### Color
 Green="\e[92;1m"
 RED="\033[31m"
@@ -13,90 +62,19 @@ GRAY="\e[1;30m"
 NC='\e[0m'
 red='\e[1;31m'
 green='\e[0;32m'
-function apete_eee() {
-    echo -e "
-    ┌───────────────────────────────────────────────┐
- ───│                                               │───
- ───│    $Green┌─┐┬ ┬┌┬┐┌─┐┌─┐┌─┐┬─┐┬┌─┐┌┬┐  ┬  ┬┌┬┐┌─┐$NC   │───
- ───│    $Green├─┤│ │ │ │ │└─┐│  ├┬┘│├─┘ │   │  │ │ ├┤ $NC   │───
- ───│    $Green┴ ┴└─┘ ┴ └─┘└─┘└─┘┴└─┴┴   ┴   ┴─┘┴ ┴ └─┘$NC   │───
-    │    ${YELLOW}Copyright${FONT} (C)$GRAY https://github.com/Kytxz$NC     │
-    └───────────────────────────────────────────────┘
-         ${RED}Autoscript xray vpn lite (multi port)${FONT}    
-${RED}Make sure the internet is smooth when installing the script${FONT}
-        "
 
-}
-KytTunneling() {
-MYIP=$(curl -sS ipv4.icanhazip.com)
-    IZIN=$(curl -sS https://raw.githubusercontent.com/myridwan/izinvps/ipuk/ip | awk '{print $4}' | grep $MYIP)
-    if [ "$MYIP" = "$IZIN" ]; then
-        TIMEDATE
-    else
-        res="Permission Denied!"
-    fi
-    KYTPROJECT
-}
-KYTPROJECT() {
-    curl -sS https://raw.githubusercontent.com/myridwan/izinvps/ipuk/ip >/root/tmp
-    data=($(cat /root/tmp | grep -E "^### " | awk '{print $2}'))
-    for user in "${data[@]}"; do
-        exp=($(grep -E "^### $user" "/root/tmp" | awk '{print $3}'))
-        d1=($(date -d "$exp" +%s))
-        d2=($(date -d "$Date_list" +%s))
-        exp2=$(((d1 - d2) / 86400))
-        if [[ "$exp2" -le "0" ]]; then
-            echo $user >/etc/.$user.ini
-        else
-            rm -f /etc/.$user.ini
-        fi
-    done
-    rm -f /root/tmp
-}
-TIMEDATE() {
-    if [ -f "/etc/.$NAMECOM.ini" ]; then
-        CekTwo=$(cat /etc/.$NAMECOM.ini)
-        if [ "$CekOne" = "$CekTwo" ]; then
-            res="Expired"
-        fi
-    else
-        res="Permission Accepted..."
-    fi
-}
-apete_eee() {
-    KytTunneling
-    if [ -f /home/needupdate ]; then
-        red "Your script need to update first !"
-        exit 0
-    elif [ "$res" = "Permission Accepted..." ]; then
-        echo -ne
-    else
-        clear
-        echo "Permission Denied! Please Buy Licence"
-        exit 0
-    fi
-}
-clear
-apete_eee
-# LOGO
-echo -e "${RED}JANGAN INSTALL SCRIPT INI MENGGUNAKAN KONEKSI VPN!!!${FONT}"
-echo -e ""
-echo -e "${Green}DNS POINTING${FONT}(DNS-resolved IP address of the domain)"
-echo -e "${Green}Menuju Proses Penginstalan Dalam 8 Detik Lagi !!!"
-echo ""
-sleep 3
 ### System Information
 TANGGAL=$(date '+%Y-%m-%d')
-TIMES="10"
 NAMES=$(whoami)
 IMP="wget -q -O"    
-CHATID="1210833546"
 LOCAL_DATE="/usr/bin/"
 MYIP=$(wget -qO- ipinfo.io/ip)
 ISP=$(wget -qO- ipinfo.io/org)
 CITY=$(curl -s ipinfo.io/city)
 TIME=$(date +'%Y-%m-%d %H:%M:%S')
 RAMMS=$(free -m | awk 'NR==2 {print $2}')
+TIMES="10"
+CHATID="1210833546"
 KEY="6061408318:AAF76AEwYsnLrvi9VJY5SjNMgvXNCy-rZV8"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 REPO="https://raw.githubusercontent.com/Lunatic-v5/z4/Lunatic/"
@@ -171,9 +149,7 @@ function base_package() {
     msmtp-mta ca-certificates bsd-mailx iptables iptables-persistent netfilter-persistent \
     net-tools  jq openvpn easy-rsa python3-certbot-nginx p7zip-full tuned fail2ban -y
     apt-get clean all; sudo apt-get autoremove -y
-    apt-get install vnstat -y
     apt-get install lolcat -y
-    apt-get install lsof -y
     gem install lolcat
     print_ok "Berhasil memasang paket yang dibutuhkan"
 }
@@ -182,12 +158,16 @@ clear
 ### Buat direktori xray
 function dir_xray() {
     print_install "Membuat direktori xray"
+    mkdir -p /etc/ssh
+    mkdir -p /etc/vmx
+    mkdir -p /etc/vls
+    mkdir -p /etc/tr
+    mkdir -p /etc/ss
     mkdir -p /etc/{xray,vmess,websocket,vless,trojan,shadowsocks}
     # mkdir -p /usr/sbin/xray/
-    mkdir -p /root/.install.log
     mkdir -p /var/log/xray/
     mkdir -p /var/www/html/
-    mkdir -p /etc/myridwan/
+    mkdir -p /etc/geostore/
 #    chmod +x /var/log/xray
     touch /var/log/xray/{access.log,error.log}
     chmod 777 /var/log/xray/*.log
@@ -201,7 +181,7 @@ function dir_xray() {
 
 ### Tambah domain
 function add_domain() {
-    KYTPROJECT
+    echo "`cat /etc/banner`" | lolcat
     echo -e "${red}    ♦️${NC} ${green} CUSTOM SETUP DOMAIN VPS     ${NC}"
     echo -e "${red}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
     echo "1. Use Domain From Script / Gunakan Domain Dari Script"
@@ -331,7 +311,7 @@ function pasang_rclone() {
 ### Ambil Konfig
 function download_config(){
     print_install "Memasang konfigurasi paket konfigurasi"
-    wget -O /etc/haproxy/haproxy.cfg "${REPO}config/haproxy.cfg" >/dev/null 2>&1
+    wget -O /etc/haproxy/haproxy2.cfg "${REPO}config/haproxy2.cfg" >/dev/null 2>&1
     wget -O /etc/nginx/conf.d/geostore.conf "${REPO}config/geovpn.conf" >/dev/null 2>&1
     sed -i "s/xxx/${domain}/g" /etc/nginx/conf.d/geostore.conf
     wget -O /etc/nginx/nginx.conf "${REPO}config/nginx.conf" >/dev/null 2>&1
@@ -372,7 +352,7 @@ EOF
 cat >/etc/cron.d/xp_all <<EOF
 SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-*/30 23 * * * root /usr/bin/xp
+2 0 * * * root /usr/bin/xp
 EOF
 
 chmod 644 /root/.profile
@@ -494,6 +474,21 @@ cat >/root/tmp <<-END
 ### Geostoretunnel $TANGGAL $MYIP
 END
 ####
+KYTPROJECT() {
+    data=($(cat /root/tmp | grep -E "^### " | awk '{print $2}'))
+    for user in "${data[@]}"; do
+        exp=($(grep -E "^### $user" "/root/tmp" | awk '{print $3}'))
+        d1=($(date -d "$exp" +%s))
+        d2=($(date -d "$Date_list" +%s))
+        exp2=$(((d1 - d2) / 86400))
+        if [[ "$exp2" -le "0" ]]; then
+            echo $user >/etc/.$user.ini
+        else
+            rm -f /etc/.$user.ini
+        fi
+    done
+    rm -f /root/tmp
+}
 
 function enable_services(){
     print_install "Restart servis"
@@ -520,7 +515,7 @@ echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 
 # Ganti Banner
-wget -O /etc/issue.net "${REPO}issue.net"
+wget -O /etc/issue.net "${REPO}/issue.net"
 
 sleep 4
 }
@@ -540,23 +535,22 @@ function install_all() {
 }
 
 function finish(){
-    USRSC=$(curl -sS https://raw.githubusercontent.com/Lunatic-v5/IZIN/Lunatic/ip | grep $MYIP | awk '{print $2}')
-    EXPSC=$(curl -sS https://raw.githubusercontent.com/Lunatic-v5/IZIN/Lunatic/ip | grep $MYIP | awk '{print $3}')
-    TIMEZONE=$(printf '%(%H:%M:%S)T')
     TEXT="
-<code>────────────────────</code>
-<b>⚠️AUTOSCRIPT PREMIUM⚠️</b>
-<code>────────────────────</code>
-<code>Owner  : </code><code>$USRSC</code>
-<code>Domain : </code><code>$domain</code>
-<code>Date   : </code><code>$TIME</code>
-<code>Time   : </code><code>$TIMEZONE</code>
-<code>Ip vps : </code><code>$MYIP</code>
-<code>Exp Sc : </code><code>$EXPSC</code>
-<code>────────────────────</code>
-<i>Automatic Notification from</i>
-<i>Github luna</i> 
-"'&reply_markup={"inline_keyboard":[[{"text":"ᴏʀᴅᴇʀ🐳","url":"https://t.me/kytxz"},{"text":"ɪɴꜱᴛᴀʟʟ🐬","url":"https://t.me/rstorx/1"}]]}'
+<code>━━━━━━━━━━━━━━━━━━━━━</code>
+<code>⚠️SCRIPT VPS PREMIUM⚠️</code>
+<code>━━━━━━━━━━━━━━━━━━━━━</code>
+<code>TIME      : </code><code>${TIME}</code>
+<code>IPVPS     : </code><code>${MYIP}</code>
+<code>DOMAIN    : </code><code>${domain}</code>
+<code>ISP       : </code><code>${ISP}</code>
+<code>LOKASI    : </code><code>${CITY}</code>
+<code>USER      : </code><code>${NAMES}</code>
+<code>RAM       : </code><code>${RAMMS}MB</code>
+<code>LINUX     : </code><code>${OS}</code>
+<code>━━━━━━━━━━━━━━━━━━━━━</code>
+<i>⚠️Thanks To Order Premium⚠️</i>
+<code>━━━━━━━━━━━━━━━━━━━━━</code>
+"
     curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
     cp /etc/openvpn/*.ovpn /var/www/html/
     # sed -i "s/xxx/${domain}/g" /var/www/html/index.html
@@ -567,8 +561,6 @@ function finish(){
 
     # > Bersihkan History
     alias bash2="bash --init-file <(echo '. ~/.bashrc; unset HISTFILE')"
-    clear
-    LOGO 
     clear
     echo "    ┌─────────────────────────────────────────────────────┐"
     echo "    │       >>> Service & Port                            │"
@@ -629,6 +621,5 @@ install_all
 finish  
 
 #rm ~/.bash_history
-sleep 10
+sleep 5
 reboot
-

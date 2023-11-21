@@ -300,12 +300,20 @@ function install_slowdns(){
     print_success "SlowDNS"
 }
 
-### Pasang Rclone
+### Pasang Rclone 
 function pasang_rclone() {
     print_install "Memasang Rclone"
     print_success "Installing Rclone"
-    curl "${REPO}bin/rclone" | bash >/dev/null 2>&1
+    curl "${REPO}backup/rclone.conf" | bash >/dev/null 2>&1
     print_success "Rclone"
+}
+
+### Pasang Backup
+function pasang_backup() {
+    print_install "Memasang Rclone"
+    print_success "Installing Rclone"
+    curl "${REPO}backup/set-br.sh" | bash >/dev/null 2>&1
+    print_success "Br"
 }
 
 ### Ambil Konfig
@@ -508,7 +516,7 @@ function enable_services(){
     systemctl enable --now client
     systemctl enable --now server
     systemctl enable --now fail2ban
-    wget -O /root/.config/rclone/rclone.conf "${REPO}rclone/rclone.conf" >/dev/null 2>&1
+    wget -O /root/.config/rclone/rclone.conf "${REPO}backup/rclone.conf" >/dev/null 2>&1
     sleep 1
 # banner /etc/issue.net
 echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config

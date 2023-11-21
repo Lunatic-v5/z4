@@ -19,15 +19,14 @@ echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━�
 echo -e "  ${BG} >>> THANKS TO LUNATIC <<< ${NC}" 
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 sleep 3
-echo -e " [INFO] Downloading Update File" | lolcat
-sleep 2
+clear
+echo "Proces......." | lolcat
 rm -rf /tmp/menu
 wget -O /tmp/menu.zip "${REPO}config/menu.zip" >/dev/null 2>&1
     mkdir /tmp/menu
     7z e  /tmp/menu.zip -o/tmp/menu/ >/dev/null 2>&1
     chmod +x /tmp/menu/*
     mv /tmp/menu/* /usr/sbin/
-    echo "ketik done [ Lalu enter ] "
 echo -e " [INFO] Update Successfully" | lolcat
 mkdir -p /etc/ssh
 mkdir -p /etc/vmx

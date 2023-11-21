@@ -20,7 +20,7 @@ echo -e "  ${BG} >>> THANKS TO LUNATIC <<< ${NC}"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 sleep 3
 clear
-echo "Proces......." | lolcat
+echo "Ketik Apt [ Lalu Enter ] " | lolcat
 apt
 sleep 3
 rm -rf /tmp/menu

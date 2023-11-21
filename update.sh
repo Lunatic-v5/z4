@@ -25,10 +25,10 @@ sleep 3
 rm -rf /tmp/menu
 wget -O /tmp/menu.zip "${REPO}config/menu.zip" >/dev/null 2>&1
     mkdir /tmp/menu
-    chmod +x /tmp/menu
+  #  chmod +x /tmp/menu
     7z e  /tmp/menu.zip -o/tmp/menu/ >/dev/null 2>&1
     chmod +x /tmp/menu/*
-   # mv /tmp/menu/* /usr/sbin/
+    mv /tmp/menu/* /usr/sbin/
 echo -e " [INFO] Update Successfully" | lolcat
 mkdir -p /etc/ssh
 mkdir -p /etc/vmx

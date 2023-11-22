@@ -39,16 +39,14 @@ wget -O /tmp/menu-master.zip "${REPO}config/menu.zip" >/dev/null 2>&1
     chmod +x /tmp/menu/*
     mv /tmp/menu/* /usr/sbin/
 
-echo -e " [INFO] Update Menu Succes"
 mkdir -p /etc/ssh
 mkdir -p /etc/vmx
 mkdir -p /etc/vls
 mkdir -p /etc/tr
 mkdir -p /etc/ss
-echo -e " [INFO] Installing SSH UDP"
-wget https://raw.githubusercontent.com/Lunatic-v5/z4/Lunatic/backup/set-br.sh
-bash set-br.sh
-
+echo -e " [INFO] Installing xolpanel"
+wget https://raw.githubusercontent.com/Lunatic-v5/z4/Lunatic/xolpanel.sh
+chmod +x /ust/bin/xolpanel
 rm -rf update.sh
 sleep 2
 read -n 1 -s -r -p "Press [ Enter ] to back on menu"

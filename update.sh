@@ -47,6 +47,8 @@ mkdir -p /etc/ss
 echo -e " [INFO] Installing xolpanel"
 wget https://raw.githubusercontent.com/Lunatic-v5/z4/Lunatic/xolpanel.sh
 chmod +x /ust/bin/xolpanel
+wget https://raw.githubusercontent.com/Lunatic-v5/z4/Lunatic/config/menu2.sh
+chmod +x /ust/bin/menu2
 rm -rf update.sh
 sleep 2
 read -n 1 -s -r -p "Press [ Enter ] to back on menu"

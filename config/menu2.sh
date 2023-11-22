@@ -428,7 +428,7 @@ echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━�
 echo -e " ${BICyan}[${BIWhite}01${BICyan}]${BIRed} •${NC} ${CYAN}SSH MENU        $NC  ${BICyan}[${BIWhite}11${BICyan}]${BIRed} • ${NC}${CYAN}CHANGE DOMAIN $NC"
 echo -e " ${BICyan}[${BIWhite}02${BICyan}]${BIRed} •${NC} ${CYAN}VMESS MENU      $NC  ${BICyan}[${BIWhite}12${BICyan}]${BIRed} • ${NC}${CYAN}CHANGE BANNER $NC"
 echo -e " ${BICyan}[${BIWhite}03${BICyan}]${BIRed} •${NC} ${CYAN}VLESS MENU      $NC  ${BICyan}[${BIWhite}13${BICyan}]${BIRed} • ${NC}${CYAN}RESTART SERVICE $NC"
-echo -e " ${BICyan}[${BIWhite}04${BICyan}]${BIRed} •${NC} ${CYAN}TROJAN MENU     $NC  ${BICyan}[${BIWhite}14${BICyan}]${BIRed} • ${NC}${CYAN}MENU KE 2 $NC"
+echo -e " ${BICyan}[${BIWhite}04${BICyan}]${BIRed} •${NC} ${CYAN}TROJAN MENU     $NC  ${BICyan}[${BIWhite}14${BICyan}]${BIRed} • ${NC}${CYAN}MENU KE 1 $NC"
 echo -e " ${BICyan}[${BIWhite}05${BICyan}]${BIRed} •${NC} ${CYAN}S-SOCK MENU     $NC  ${BICyan}[${BIWhite}15${BICyan}]${BIRed} • ${NC}${CYAN}INSTALL UDP  $NC"
 echo -e " ${BICyan}[${BIWhite}06${BICyan}]${BIRed} •${NC} ${CYAN}RUNNING SERVICE $NC  ${BICyan}[${BIWhite}16${BICyan}]${BIRed} • ${NC}${CYAN}AUTO REBOOT $NC"
 echo -e " ${BICyan}[${BIWhite}07${BICyan}]${BIRed} •${NC} ${CYAN}BACKUP & RESTORE$NC  ${BICyan}[${BIWhite}17${BICyan}]${BIRed} • ${NC}${CYAN}UPDATE SCRIPT $NC"
@@ -482,9 +482,8 @@ case $menu in
     seres
     ;;
 14) clear ;
-    wget ${MENU2}menu2.sh && chmod +x menu2.sh && ./menu2.sh
+    menu
     ;;
-
 15) clear ;
     wget --load-cookies /tmp/cookies.txt ${UDPX} -O install-udp && rm -rf /tmp/cookies.txt && chmod +x install-udp && ./install-udp
     ;;

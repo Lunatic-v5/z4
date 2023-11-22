@@ -1,5 +1,4 @@
 #!/bin/bash
-#!/bin/bash
 # Color Validation
 Lred='\e[1;91m'
 Lgreen='\e[92m'
@@ -73,10 +72,12 @@ ISP=$(wget -qO- ipinfo.io/org)
 CITY=$(curl -s ipinfo.io/city)
 TIME=$(date +'%Y-%m-%d %H:%M:%S')
 RAMMS=$(free -m | awk 'NR==2 {print $2}')
+#Bot Telegram
 TIMES="10"
 CHATID="5970831071"
 KEY="6061408318:AAF76AEwYsnLrvi9VJY5SjNMgvXNCy-rZV8"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
+#Hosting
 REPO="https://raw.githubusercontent.com/Lunatic-v5/z4/Lunatic/"
 CDNF="https://raw.githubusercontent.com/Lunatic-v5/z4/Lunatic"
 APT="apt-get -y install "

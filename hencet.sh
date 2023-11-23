@@ -13,9 +13,7 @@ PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 NC='\033[0;37m'
 # ===================
-echo ''
 clear
-echo ''
 echo -e "$green.........................................................."$NC
 echo -e "$BGBLUE                ⚡ PREMIUM SPEED SCRIPT ⚡                "$NC
 echo -e "$green.........................................................."$NC
@@ -189,7 +187,6 @@ function add_domain() {
     echo "2. Choose Your Own Domain / Pilih Domain Sendiri"
     echo -e "${red}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
     read -rp "Choose Your Domain Installation : " dom 
-
     if test $dom -eq 1; then
     clear
     apt install jq curl -y
@@ -209,7 +206,6 @@ function add_domain() {
     sleep 2
     clear
 }
-
 ### Pasang SSL
 function pasang_ssl() {
     print_install "Memasang SSL pada domain"
@@ -228,7 +224,6 @@ function pasang_ssl() {
     chmod 777 /etc/xray/xray.key
     print_success "SSL Certificate"
 }
-
 ### Install Xray
 function install_xray(){
     print_install "Memasang modul Xray terbaru"
@@ -243,7 +238,7 @@ function install_xray(){
     
     cat /etc/xray/xray.crt /etc/xray/xray.key | tee /etc/haproxy/xray.pem
     wget -O /etc/xray/config.json "${REPO}xray/config.json" >/dev/null 2>&1 
-    #wget -O /usr/sbin/xray/ "${REPO}bin/xray" >/dev/null 2>&1
+    wget -O /usr/sbin/xray/ "${REPO}bin/xray" >/dev/null 2>&1
     wget -O /usr/sbin/websocket "${REPO}bin/ws" >/dev/null 2>&1
     wget -O /etc/websocket/tun.conf "${REPO}xray/tun.conf" >/dev/null 2>&1 
     wget -O /etc/systemd/system/ws.service "${REPO}xray/ws.service" >/dev/null 2>&1 
@@ -280,8 +275,7 @@ WantedBy=multi-user.target
 EOF
 print_success "Xray C0re"
 }
-
-### Pasang OpenVPN
+## Pasang OpenVPN
 function install_ovpn(){
     print_install "Memasang modul Openvpn"
     source <(curl -sL ${REPO}openvpn/openvpn)
@@ -291,7 +285,6 @@ function install_ovpn(){
     source <(curl -sL ${REPO}badvpn/setup.sh)
     print_success "OpenVPN"
 }
-
 ### Pasang SlowDNS
 function install_slowdns(){
     print_install "Memasang modul SlowDNS Server"
@@ -300,7 +293,6 @@ function install_slowdns(){
     bash /tmp/nameserver | tee /root/install.log
     print_success "SlowDNS"
 }
-
 ### Pasang Rclone 
 function pasang_rclone() {
     print_install "Memasang Rclone"
@@ -345,7 +337,6 @@ function download_config(){
     7z e  /tmp/menu.zip -o/tmp/menu/ >/dev/null 2>&1
     chmod +x /tmp/menu/*
     mv /tmp/menu/* /usr/sbin/
-
 
     cat >/root/.profile <<EOF
 # ~/.profile: executed by Bourne-compatible login shells.
@@ -469,13 +460,10 @@ ln -s /usr/bin/msmtp /usr/bin/sendmail >/dev/null 2>&1
 ln -s /usr/bin/msmtp /usr/lib/sendmail >/dev/null 2>&1
 print_ok "Selesai pemasangan modul tambahan"
 }
-
-
 ########## SETUP FROM HERE ##########
           # ORIGINAL SCRIPT #
 #####################################
 echo "INSTALLING SCRIPT..."
-
 touch /root/.install.log
 cat >/root/tmp <<-END
 #!/bin/bash
@@ -483,22 +471,21 @@ cat >/root/tmp <<-END
 ### Geostoretunnel $TANGGAL $MYIP
 END
 ####
-KYTPROJECT() {
-    data=($(cat /root/tmp | grep -E "^### " | awk '{print $2}'))
-    for user in "${data[@]}"; do
-        exp=($(grep -E "^### $user" "/root/tmp" | awk '{print $3}'))
-        d1=($(date -d "$exp" +%s))
-        d2=($(date -d "$Date_list" +%s))
-        exp2=$(((d1 - d2) / 86400))
-        if [[ "$exp2" -le "0" ]]; then
-            echo $user >/etc/.$user.ini
-        else
-            rm -f /etc/.$user.ini
-        fi
-    done
-    rm -f /root/tmp
-}
-
+#KYTPROJECT() {
+  #  data=($(cat /root/tmp | grep -E "^### " | awk '{print $2}'))
+ #   for user in "${data[@]}"; do
+     #   exp=($(grep -E "^### $user" "/root/tmp" | awk '{print $3}'))
+   #     d1=($(date -d "$exp" +%s))
+  #      d2=($(date -d "$Date_list" +%s))
+    #    exp2=$(((d1 - d2) / 86400))
+ #       if [[ "$exp2" -le "0" ]]; then
+   #         echo $user >/etc/.$user.ini
+    #    else
+  #          rm -f /etc/.$user.ini
+    #    fi
+#    done
+  #  rm -f /root/tmp
+# }
 function enable_services(){
     print_install "Restart servis"
     systemctl daemon-reload
@@ -518,17 +505,13 @@ function enable_services(){
     systemctl enable --now server
     systemctl enable --now fail2ban
     wget -O /root/.config/rclone/rclone.conf "${REPO}backup/rclone.conf" >/dev/null 2>&1
-    sleep 1
+   # sleep 1
 # banner /etc/issue.net
 echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
-
 # Ganti Banner
 wget -O /etc/issue.net "${REPO}/issue.net"
-
-sleep 4
 }
-
 function install_all() {
     base_package
     # dir_xray

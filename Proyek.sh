@@ -71,6 +71,7 @@ Cyan='\033[0;96m'        # Cyan
 IWhite='\033[0;97m'       # White
 CYAN='\033[0;96m'        # Cyan
 YELLOW='\033[0;93m'      # Yellow
+GREEN='\033[1;32m'
 NC='\e[0m'
 #
 UPDATE="https://raw.githubusercontent.com/Lunatic-v5/z4/Lunatic/"
@@ -113,26 +114,25 @@ if [[ $xray == "running" ]]; then
 else
     status_haproxy="${RED}OFF${NC}"
 fi
-
 #Download/Upload today
-daily_usage=$(vnstat -d --oneline | awk -F\; '{print $6}' | sed 's/ //')
-monthly_usage=$(vnstat -m --oneline | awk -F\; '{print $11}' | sed 's/ //')
+# daily_usage=$(vnstat -d --oneline | awk -F\; '{print $6}' | sed 's/ //')
+# monthly_usage=$(vnstat -m --oneline | awk -F\; '{print $11}' | sed 's/ //')
 DATE=`date -d "0 days" +"%Y-%m-%d"`
 #KonZ
 # vla = vless
-vlx=$(grep -c -E "^#vl# " "/etc/xray/config.json")
-let vla=$vlx/2
+# vlx=$(grep -c -E "^#vl# " "/etc/xray/config.json")
+# let vla=$vlx/2
 #vma = vmess
-vmc=$(grep -c -E "^#vm# " "/etc/xray/config.json")
-let vma=$vmc/2
+# vmc=$(grep -c -E "^#vm# " "/etc/xray/config.json")
+# let vma=$vmc/2
 # ssh1 = ssh
-ssh1="$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /etc/passwd | wc -l)"
+# ssh1="$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /etc/passwd | wc -l)"
 # trx = trojan
-trx=$(grep -c -E "^#tr# " "/etc/xray/config.json")
-let trb=$trx/2
+# trx=$(grep -c -E "^#tr# " "/etc/xray/config.json")
+# let trb=$trx/2
 # ssa = sadowsok
-ssx=$(grep -c -E "^#ss# " "/etc/xray/config.json")
-let ssa=$ssx/2
+# ssx=$(grep -c -E "^#ss# " "/etc/xray/config.json")
+# let ssa=$ssx/2
 ###validation
 # echo -e "${HIJAU}│${NC} ${YELLOW}❐ REGISTRASI ${NC}          : ${Cyan}$Name${NC}"
 # echo -e "${HIJAU}│${NC} ${YELLOW}❐ EXP SCRIPT ${NC}   : ${Cyan}$exp ( $exp2 ) ( $Exp ) ${NC}"
@@ -174,7 +174,9 @@ echo -e "${HG}  ┌────────────────────�
 echo -e "${HG}  │${NC}${HW}Operating Sistem:  $MODEL"
 echo -e "${HG}  │${NC}${HW}Cpu Usage:  $vcp%"
 echo -e "${HG}  │${NC}${HW}Ram:  $RAM MB  "
+echo -e "${HG}  │${NC}${HW}Swap Ram:  $rak"
 echo -e "${HG}  │${NC}${HW}Domain:  $domain"
+echo -e "${HG}  │${NC}${HW}Ns:  $NS"
 echo -e "${HG}  │${NC}${HW}TimeZone:  $TIMEZONE"
 echo -e "${HG}  │${NC}${HW}Reset Server:  $RESET"
 echo -e "${HG}  │${NC}${HW}Ip Vps:  $IPVPS"
@@ -196,8 +198,8 @@ echo -e "   ${HG}  │ ${HB}08${NC} ${HW}Inf Port / Vpn     $NC ${HB}18${NC} ${H
 echo -e "   ${HG}  │ ${HB}09${NC} ${HW}MoonT Vps Info     $NC ${HB}19${NC} ${HW}Clear Log / ALL     $NC   ${HG}│"
 echo -e "   ${HG}  │ ${HB}10${NC} ${HW}Spedtest LuA       $NC ${HB}20${NC} ${HW}Bot manager / LiBev $NC   ${HG}│"
 echo -e "   ${HG}  └──────────────────────────────────────────────────┘${NC}"
-echo -e "   ${GR}                              4.7 ${NC}"
-echo -e "               ${HB}────${HW}────${HG}────${HP}────${HY}────${HC}────${HR}${NC}"
+echo -e "   ${GR}                            4.7 ${NC}"
+echo -e "                       ${HB}────${HW}────${HG}────${HP}────${HY}────${HC}────${HR}${NC}"
 echo -e ""
 read -p "Select From Options [ 1 - 20 ] : " AztW
 case $AztW in

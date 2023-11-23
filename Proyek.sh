@@ -66,30 +66,13 @@ UDPX="https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-c
 # COLOR VALIDATION
 clear
 WB='\e[37;1m'
-BIBlack='\033[1;90m'      # Black
-BIRed='\033[1;91m'        # Red
-BIGreen='\033[1;92m'      # Green
-BIYellow='\033[1;93m'     # Yellow
-BIBlue='\033[1;94m'       # Blue
-BIPurple='\033[1;95m'     # Purple
 BICyan='\033[1;96m'       # Cyan
-BIWhite='\033[1;97m'      # White
-UWhite='\033[4;37m'       # White
-On_IPurple='\033[0;105m'  #
-On_IRed='\033[0;101m'
-IBlack='\033[0;90m'       # Black
-Red='\033[0;91m'         # Red
-RED='\033[0;91'          # Red
-IGreen='\033[0;92m'       # Green
-IYellow='\033[0;93m'      # Yellow
-IBlue='\033[0;94m'        # Blue
-IPurple='\033[0;95m'      # Purple
 Cyan='\033[0;96m'        # Cyan
 IWhite='\033[0;97m'       # White
 CYAN='\033[0;96m'        # Cyan
 YELLOW='\033[0;93m'      # Yellow
 NC='\e[0m'
-
+#
 UPDATE="https://raw.githubusercontent.com/Lunatic-v5/z4/Lunatic/"
 #Bottt
 BOT="https://raw.githubusercontent.com/myridwan/src/ipuk/"
@@ -155,15 +138,42 @@ let ssa=$ssx/2
 # echo -e "${HIJAU}│${NC} ${YELLOW}❐ EXP SCRIPT ${NC}   : ${Cyan}$exp ( $exp2 ) ( $Exp ) ${NC}"
 # echo -e "${HIJAU}│  \033[0m ${BOLD}${YELLOW}SSH     VMESS       VLESS      TROJAN       SHADOWSOCKS$NC ${BICyan} "
 # echo -e "${HIJAU}│  \033[0m ${BICyan} $ssh1       $vma           $vla          $trb              $ssa   $NC   ${BICyan} "
-HIJAU="\e[92;1m" # hijau
+#################### color Validation ###################
+#
+#HIGH TENSY ( code nomor = 9 )
+HR="\e[1;91m" #| Red 
+HG="\e[1;92m" #| Green  
+HY="\e[1;93m" #| Yellow 
+HB="\e[1;94m" #| Blue   
+HP="\e[1;95m" #| Purple 
+HC="\e[1;96m" #| Cyan   
+HW="\e[1;97m" #| White  
+#Background ( code nomor = 4 )
+BR="\e[41m" #| Red    
+BG="\e[42m" #| Green  
+BY="\e[43m" #| Yellow 
+BB="\e[44m" #| Blue   
+BP="\e[45m" #| Purple 
+BC="\e[46m" #| Cyan   
+BW="\e[47m" #| White  
+#Underline ( code Nomor = 5)
+UR="\e[5;31" # Red
+UG="\e[5;32" # Green
+UY="\e[5;33" # Yellow
+UB="\e[5;34" # Blue
+UP="\e[5;35" # Purple
+UC="\e[5;36" # Cyan
+UW="\e[5;37" # White
+NC="\033[0m" # Text Reset
+#
 clear
 echo "cecking"
 echo -e "${BICyan}┌────────────────────────────────────────────────────────────┐${NC}"
 echo -e "\E[44;1;39m                     ⇱ LUNATIC TUNNELING ⇲              \E[0m"
 echo -e "${BICyan}└────────────────────────────────────────────────────────────┘${NC}"
 echo -e "${HIJAU}┌────────────────────────────────────────────────────────────┐${NC}"
-echo -e "${HIJAU}│${NC}${YELLOW}❐ OPS  ${NC} : $MODEL"
-echo -e "${HIJAU}│${NC}${YELLOW}❐ CPU  ${NC} : $vcp%"
+echo -e "${HIJAU}│${NC}${YELLOW}❐ OPS ${NC}  : $MODEL"
+echo -e "${HIJAU}│${NC}${YELLOW}❐ CPU ${NC}  : $vcp%"
 echo -e "${HIJAU}│${NC}${YELLOW}❐ RAM ${NC}  : $RAM MB  "
 echo -e "${HIJAU}│${NC}${YELLOW}❐ DOM ${NC}  : $domain"
 echo -e "${HIJAU}│${NC}${YELLOW}❐ VPS ${NC}  : $IPVPS"
@@ -171,7 +181,7 @@ echo -e "${HIJAU}└────────────────────
 echo -e "     [ ${Cyan}XRAY:${NC} ${status_xray} ]      [ ${Cyan}NGINX:${NC} ${status_nginx} ]      [ ${Cyan}HAPROXY:${NC} ${status_haproxy} ]"
 echo -e "${HIJAU}┌────────────────────────────────────────────────────────────┐${NC}"
 echo -e "${HIJAU}└────────────────────────────────────────────────────────────┘${NC}"
-echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
+echo -e "${BICyan}┌────────────────────────────────────────────────────────────┐${NC}"
 echo -e " ${BICyan}01📨${NC} ${CYAN}ssh / Libev         $NC  ${BICyan}[${BIWhite}11${BICyan}]${BIRed} • ${NC}${CYAN}CHANGE DOMAIN $NC"
 echo -e " ${BICyan}02📨${NC} ${CYAN}vmess / Xray      $NC  ${BICyan}[${BIWhite}12${BICyan}]${BIRed} • ${NC}${CYAN}CHANGE BANNER $NC"
 echo -e " ${BICyan}03📨${NC} ${CYAN}vless / Xray      $NC  ${BICyan}[${BIWhite}13${BICyan}]${BIRed} • ${NC}${CYAN}RESTART SERVICE $NC"
@@ -182,7 +192,7 @@ echo -e " ${BICyan}07📨${NC} ${CYAN}Backup MnaGer $NC  ${BICyan}[${BIWhite}17$
 echo -e " ${BICyan}08📨${NC} ${CYAN}Inf Port / Vpn       $NC  ${BICyan}[${BIWhite}18${BICyan}]${BIRed} • ${NC}${CYAN}CLEAR EXP ACCOUNT $NC"
 echo -e " ${BICyan}09📨${NC} ${CYAN}MoonT Vps Info        $NC  ${BICyan}[${BIWhite}19${BICyan}]${BIRed} • ${NC}${CYAN}CLEAR LOG $NC"
 echo -e " ${BICyan}10📨${NC} ${CYAN}Spedtest LuA       $NC  ${BICyan}[${BIWhite}20${BICyan}]${BIRed} • ${NC}${CYAN}MENU BOT SSH $NC"
-echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
+echo -e "${BICyan}└────────────────────────────────────────────────────────────┘${NC}"
 echo -e "\E[44;1;39m                     ⇱ LUNATIC TUNNELING ⇲                    \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e ""

@@ -73,7 +73,7 @@ CYAN='\033[0;96m'        # Cyan
 YELLOW='\033[0;93m'      # Yellow
 GREEN='\033[1;32m'
 NC='\e[0m'
-#
+####
 UPDATE="https://raw.githubusercontent.com/Lunatic-v5/z4/Lunatic/"
 #Bottt
 BOT="https://raw.githubusercontent.com/myridwan/src/ipuk/"
@@ -170,36 +170,32 @@ clear
 #echo -e "${HG}┌────────────────────────────────────────────────────────────┐${NC}"
 echo -e "  \E[41;1;39m                   ⇱ LUNATIC TUNNELING ⇲                 \E[0m"
 #echo -e "${HG}└────────────────────────────────────────────────────────────┘${NC}"
-echo -e "${HG}  ┌────────────────────────────────────────────────────────────┐${NC}"
+echo -e "${HG}  ┌───────────────────────────────────────────────────────────┐${NC}"
 echo -e "${HG}  │${NC}${HW}Operating Sistem:  $MODEL"
-echo -e "${HG}  │${NC}${HW}Cpu Usage:  $vcp%"
-echo -e "${HG}  │${NC}${HW}Ram:  $RAM MB  "
-echo -e "${HG}  │${NC}${HW}Swap Ram:  $rak"
-echo -e "${HG}  │${NC}${HW}Domain:  $domain"
-echo -e "${HG}  │${NC}${HW}Ns:  $NS"
-echo -e "${HG}  │${NC}${HW}TimeZone:  $TIMEZONE"
-echo -e "${HG}  │${NC}${HW}Reset Server:  $RESET"
-echo -e "${HG}  │${NC}${HW}Ip Vps:  $IPVPS"
-echo -e "${HG}  └────────────────────────────────────────────────────────────┘${NC}"
+echo -e "${HG}  │${NC}${HW}Cpu Usage :  $vcp%"
+echo -e "${HG}  │${NC}${HW}Ram :  $RAM MB  "
+echo -e "${HG}  │${NC}${HW}Swap Ram :  $rak"
+echo -e "${HG}  │${NC}${HW}Domain :  $domain"
+echo -e "${HG}  │${NC}${HW}Ns :  $NS"
+echo -e "${HG}  │${NC}${HW}TimeZone :  $TIMEZONE"
+echo -e "${HG}  │${NC}${HW}Reset Server :  $RESET"
+echo -e "${HG}  │${NC}${HW}Ip Vps :  $IPVPS"
+echo -e "${HG}  └───────────────────────────────────────────────────────────┘${NC}"
 echo -e "          [ ${Cyan}XRAY:${NC} ${status_xray} ] [ ${Cyan}NGINX:${NC} ${status_nginx} ] [ ${Cyan}HAPROXY:${NC} ${status_haproxy} ]"
 echo -e "               ┌───────────────────────────────┐"
-echo -e "               │ Registrasi : $Name "
-echo -e "               │ Expired Sc : $exp2 days "
+echo -e "               │ Regist : $Name "
+echo -e "               │ Exp.Sc : $exp2 days "
 echo -e "               └───────────────────────────────┘"
 echo -e "   ${HG}  ┌──────────────────────────────────────────────────┐${NC}"
-echo -e "   ${HG}  │ ${HB}01${NC} ${HW}ssh / Libev        $NC ${HB}11${NC} ${HW}Domain Options      $NC   ${HG}│"
-echo -e "   ${HG}  │ ${HB}02${NC} ${HW}vmess / Xray       $NC ${HB}12${NC} ${HW}Change Banner       $NC   ${HG}│"
-echo -e "   ${HG}  │ ${HB}03${NC} ${HW}vless / Xray       $NC ${HB}13${NC} ${HW}Restart / Service   $NC   ${HG}│"
-echo -e "   ${HG}  │ ${HB}04${NC} ${HW}trojan Libev       $NC ${HB}14${NC} ${HW}Reboot Vps          $NC   ${HG}│"
-echo -e "   ${HG}  │ ${HB}05${NC} ${HW}ShDw Sck / Ss      $NC ${HB}15${NC} ${HW}Installing Udp      $NC   ${HG}│"
-echo -e "   ${HG}  │ ${HB}06${NC} ${HW}Running/serV       $NC ${HB}16${NC} ${HW}Sett Manager        $NC   ${HG}│"
-echo -e "   ${HG}  │ ${HB}07${NC} ${HW}Backup MnaGer      $NC ${HB}17${NC} ${HW}Up Version script   $NC   ${HG}│"
-echo -e "   ${HG}  │ ${HB}08${NC} ${HW}Inf Port / Vpn     $NC ${HB}18${NC} ${HW}Clear Exp Account   $NC   ${HG}│"
-echo -e "   ${HG}  │ ${HB}09${NC} ${HW}MoonT Vps Info     $NC ${HB}19${NC} ${HW}Clear Log / ALL     $NC   ${HG}│"
-echo -e "   ${HG}  │ ${HB}10${NC} ${HW}Spedtest LuA       $NC ${HB}20${NC} ${HW}Bot manager / LiBev $NC   ${HG}│"
+echo -e "   ${HG}  │ ${HB}01${NC} ${HW}ssh / Libev     $NC ${HB}06${NC} ${HW}Running SerV        $NC   ${HG}│"
+echo -e "   ${HG}  │ ${HB}02${NC} ${HW}vmess / Xray    $NC ${HB}07${NC} ${HW}Backup MnaGer       $NC   ${HG}│"
+echo -e "   ${HG}  │ ${HB}03${NC} ${HW}vless / Xray    $NC ${HB}08${NC} ${HW}Monitor Vps         $NC   ${HG}│"
+echo -e "   ${HG}  │ ${HB}04${NC} ${HW}trojan Libev    $NC ${HB}09${NC} ${HW}Install BOT         $NC   ${HG}│"
+echo -e "   ${HG}  │ ${HB}05${NC} ${HW}ShDw Sck / Ss   $NC ${HB}10${NC} ${HW}Other Manager       $NC   ${HG}│"
 echo -e "   ${HG}  └──────────────────────────────────────────────────┘${NC}"
-echo -e "   ${GR}                            4.7 ${NC}"
+echo -e "   ${GR}                           Version Script: 4.7 Libev ${NC}"
 echo -e "                       ${HB}────${HW}────${HG}────${HP}────${HY}────${HC}────${HR}${NC}"
+echo -e ""
 echo -e ""
 read -p "Select From Options [ 1 - 20 ] : " AztW
 case $AztW in
@@ -225,48 +221,15 @@ case $AztW in
     get-backres
     ;;
 8) clear ;
-    portin
-    ;;
-9) clear ;
     gotop
     ;;
+9) clear ;
+    wget ${BOT}xolpanel.sh && chmod +x xolpanel.sh && ./xolpanel.sh
+    ;;
 10) clear ;
-    clear
-    speedtest
-    ;;
-11) clear ;
-    get-domain
-    ;;
-12) clear ;
-    nano /etc/issue.net
-    ;;
-13) clear ;
-    seres
-    ;;
-14) clear ;
-    reboot
-    ;;
-
-15) clear ;
-    wget --load-cookies /tmp/cookies.txt ${UDPX} -O install-udp && rm -rf /tmp/cookies.txt && chmod +x install-udp && ./install-udp
-    ;;
-16) clear ;
-    auto-reboot
-    ;;
-17) clear ;
-    wget ${UPDATE}update.sh && chmod +x update.sh && ./update.sh
-    ;;
-18) clear ;
-   xp
-   ;;
-19) clear ;
-   logclean
-   ;;
-20) clear ;
-   wget ${BOT}xolpanel.sh && chmod +x xolpanel.sh && ./xolpanel.sh 
+    manager
    ;;
 *)
     exit
     ;;
 esac
-

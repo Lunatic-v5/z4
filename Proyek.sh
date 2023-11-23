@@ -166,21 +166,30 @@ UP="\e[5;35" # Purple
 UC="\e[5;36" # Cyan
 UW="\e[5;37" # White
 NC="\033[0m" # Text Reset
+#Low Color
+LR="\e[31m" # Red
+LG="\e[32m" # Green
+LY="\e[33m" # Yellow
+LB="\e[34m" # Blue
+LP="\e[35m" # Purple
+LC="\e[36m" # Cyan
+LW="\e[37m" # White
+NC="\033[0m" # Text Reset
 clear
 #echo -e "${HG}┌────────────────────────────────────────────────────────────┐${NC}"
 echo -e "  \E[41;1;39m                   ⇱ LUNATIC TUNNELING ⇲                 \E[0m"
 #echo -e "${HG}└────────────────────────────────────────────────────────────┘${NC}"
-echo -e "${HG}  ┌────────────────────────────────────────────────────────────┐${NC}"
-echo -e "${HG}  │${NC}${HW}Operating Sistem:  $MODEL"
-echo -e "${HG}  │${NC}${HW}Cpu Usage:  $vcp%"
-echo -e "${HG}  │${NC}${HW}Ram:  $RAM MB  "
-echo -e "${HG}  │${NC}${HW}Swap Ram:  $rak"
-echo -e "${HG}  │${NC}${HW}Domain:  $domain"
-echo -e "${HG}  │${NC}${HW}Ns:  $NS"
-echo -e "${HG}  │${NC}${HW}TimeZone:  $TIMEZONE"
-echo -e "${HG}  │${NC}${HW}Reset Server:  $RESET"
-echo -e "${HG}  │${NC}${HW}Ip Vps:  $IPVPS"
-echo -e "${HG}  └────────────────────────────────────────────────────────────┘${NC}"
+echo -e "${HG}  ┌─────────────────────────────────────────────────────────┐${NC}"
+echo -e "${HG}  │${NC}${LW}Operating Sistem:  $MODEL"
+echo -e "${HG}  │${NC}${LW}Cpu Usage:  $vcp%"
+echo -e "${HG}  │${NC}${LW}Ram:  $RAM MB  "
+echo -e "${HG}  │${NC}${LW}Swap Ram:  $rak"
+echo -e "${HG}  │${NC}${LW}Domain:  $domain"
+echo -e "${HG}  │${NC}${LW}Ns:  $NS"
+echo -e "${HG}  │${NC}${LW}TimeZone:  $TIMEZONE"
+echo -e "${HG}  │${NC}${LW}Reset Server:  $RESET"
+echo -e "${HG}  │${NC}${LW}Ip Vps:  $IPVPS"
+echo -e "${HG}  └─────────────────────────────────────────────────────────┘${NC}"
 echo -e "          [ ${Cyan}XRAY:${NC} ${status_xray} ] [ ${Cyan}NGINX:${NC} ${status_nginx} ] [ ${Cyan}HAPROXY:${NC} ${status_haproxy} ]"
 echo -e "               ┌───────────────────────────────┐"
 echo -e "               │ Registrasi : $Name "
@@ -198,8 +207,8 @@ echo -e "   ${HG}  │ ${HB}08${NC} ${HW}Inf Port / Vpn     $NC ${HB}18${NC} ${H
 echo -e "   ${HG}  │ ${HB}09${NC} ${HW}MoonT Vps Info     $NC ${HB}19${NC} ${HW}Clear Log / ALL     $NC   ${HG}│"
 echo -e "   ${HG}  │ ${HB}10${NC} ${HW}Spedtest LuA       $NC ${HB}20${NC} ${HW}Bot manager / LiBev $NC   ${HG}│"
 echo -e "   ${HG}  └──────────────────────────────────────────────────┘${NC}"
-echo -e "   ${GR}                            4.7 ${NC}"
-echo -e "                       ${HB}────${HW}────${HG}────${HP}────${HY}────${HC}────${HR}${NC}"
+echo -e "   ${GR}                           4.7 ${NC}"
+echo -e "                   ${HB}────${HW}────${HG}────${HP}────${HY}────${HC}────${HR}${NC}"
 echo -e ""
 read -p "Select From Options [ 1 - 20 ] : " AztW
 case $AztW in
